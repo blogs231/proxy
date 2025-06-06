@@ -15,10 +15,13 @@ app.get('/proxy', async (req, res) => {
     const decoded = decodeURIComponent(targetUrl);
     const response = await axios.get(decoded, {
       responseType: 'stream',
-      headers: {
-        'User-Agent': 'Mozilla/5.0',
-        'Referer': 'https://kasintvlivecricket.com'
-      }
+     headers: {
+  'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+  'Accept': '*/*',
+  'Accept-Language': 'en-US,en;q=0.9',
+  'Origin': 'https://kasintvlivecricket.com',
+  'Referer': 'https://kasintvlivecricket.com'
+}
     });
 
     res.setHeader('Content-Type', response.headers['content-type']);
